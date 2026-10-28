@@ -1,55 +1,963 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Shipped — Landing page preview</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shipped — Package Tracking for iPhone</title>
+<meta name="description" content="Shipped is a native iPhone app that keeps your parcels in one list, with a clear journey for each. In development.">
+<meta name="color-scheme" content="light">
+<script>(function(){var p;try{p=localStorage.getItem("shipped-theme")}catch(e){}if(p!=="dark")p="light";document.documentElement.setAttribute("data-theme",p)})()</script>
 <link rel="icon" type="image/svg+xml" href="shipped-mark.svg">
 <style>
-:root{--paper:#FBF9F4;--paper2:#F2EEE6;--paper3:#EAE4D7;--ink:#17181A;--muted:#6A665D;--line:#DDD6C9;--orange:#B83A15;--orange2:#E0643D;--green:#17583A;--gold:#6B4200;--radius:0px;--shadow:none}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.01em}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,calc(100% - 48px));margin:auto}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom: none;}.brand{display:flex;align-items:center;gap:11px;font-weight:750;font-size:21px;letter-spacing:-.05em} .brand-logo{display:block;width:142px;height:auto;max-height:48px;object-fit:contain;object-position:left center}.mark{width:34px;height:34px;border-radius:0;background:var(--orange);display:grid;place-items:center;color:white;font-size:17px;font-weight:800;box-shadow:inset 0 0 0 1px #8F2A0C}.nav-right{display:flex;align-items:center;gap:25px;color:var(--muted);font-size:14px}.nav-cta{background:var(--ink);color:var(--paper);padding:11px 17px;border-radius:0;font-weight:650}.hero{padding:92px 0 76px;display:grid;grid-template-columns:1.02fr .98fr;gap:64px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--orange);font-size:12px;font-weight:750;text-transform:uppercase;letter-spacing:.12em}.dot{width:7px;height:7px;border-radius:50%;background:var(--orange2)}h1{font-size:clamp(48px,6.4vw,78px);line-height:.99;letter-spacing:-.075em;font-weight:680;margin:23px 0 24px;max-width:620px}h1 em{font-family:Georgia,serif;font-weight:400;color:var(--orange);letter-spacing:-.07em}.hero-copy{font-size:18px;line-height:1.65;color:var(--muted);max-width:490px}.actions{display:flex;gap:12px;align-items:center;margin-top:30px;flex-wrap:wrap}.btn{padding:14px 20px;border-radius:0;font-weight:650;font-size:14px;display:inline-flex;align-items:center;gap:12px}.btn-dark{background:var(--ink);color:white}.btn-light{border:1px solid var(--line);background:rgba(255,255,255,.35)}.tiny-note{font-size:12px;color:var(--muted);margin-top:16px}.visual{position:relative;min-height:440px;background:var(--paper2);border:1px solid var(--line);border-radius:0;padding:24px;overflow:hidden}.visual:before{content:"";position:absolute;width:290px;height:290px;border-radius:50%;background:#EADFC8;top:-105px;right:-85px}.visual-head{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1;font-size:12px;color:var(--muted);font-weight:650;letter-spacing:.08em;text-transform:uppercase}.live-pill{border:1px solid #C9DCCB;background:#E6F0E6;color:var(--green);border-radius:0;padding:6px 10px;letter-spacing:0;font-size:11px;text-transform:none}.tracking-card{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:0;padding:22px;margin-top:28px;box-shadow:none}.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.carrier{display:flex;gap:12px;align-items:center}.carrier-icon{width:43px;height:43px;border-radius:0;background:#F3D9CC;color:var(--orange);display:grid;place-items:center;font-weight:800;font-size:15px}.small-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700}.parcel-name{font-weight:700;font-size:17px;margin-top:3px}.status{font-size:12px;font-weight:700;color:var(--green);background:#D9E8DD;border-radius:0;padding:7px 10px;white-space:nowrap}.track-num{font-size:12px;color:var(--muted);margin-top:18px}.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:25px;position:relative}.timeline:before{content:"";position:absolute;height:2px;background:var(--line);top:6px;left:8px;right:8px}.step{position:relative;padding-top:22px;font-size:11px;color:var(--muted)}.step:before{content:"";position:absolute;top:0;left:0;width:12px;height:12px;border-radius:50%;background:var(--paper3);border:2px solid var(--paper)}.step.done:before{background:var(--green)}.step strong{display:block;color:var(--ink);font-size:12px;margin-bottom:4px}.step:last-child{text-align:right}.step:last-child:before{left:auto;right:0}.mini-row{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:14px}.mini{background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:15px 0}.mini b{display:block;font-size:13px;margin:5px 0 2px}.mini span{font-size:11px;color:var(--muted)}.section{padding:65px 0;border-top:1px solid var(--line)}.section-top{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:28px}.section h2{font-size:clamp(30px,4vw,45px);line-height:1.05;letter-spacing:-.06em;font-weight:650;margin:12px 0 0;max-width:520px}.section-intro{color:var(--muted);max-width:390px;line-height:1.65}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{padding:24px 24px 24px 0;border:0;border-top:1px solid var(--line);border-radius:0;background:transparent;min-height:190px}.feature-icon{width:37px;height:37px;border-radius:0;background:var(--paper3);display:grid;place-items:center;font-size:17px;margin-bottom:27px}.feature h3{font-size:17px;letter-spacing:-.03em;margin:0 0 8px}.feature p{font-size:14px;line-height:1.6;color:var(--muted);margin:0}.statement{background:var(--ink);color:var(--paper);border-radius:0;padding:38px;display:grid;grid-template-columns:1fr .7fr;gap:35px;align-items:center}.statement h2{font-size:clamp(28px,3.6vw,42px);letter-spacing:-.06em;line-height:1.08;margin:12px 0 0}.statement p{color:#C9C5BB;line-height:1.7;margin:0}.statement .eyebrow{color:#E8A38D}.footer{padding:28px 0 38px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:12px}.footer strong{color:var(--ink)}
-@media(max-width:800px){.hero{grid-template-columns:1fr;gap:36px;padding:62px 0 52px}.visual{min-height:400px}.section-top{display:block}.section-intro{margin-top:18px}.features{grid-template-columns:1fr}.feature{min-height:0}.feature-icon{margin-bottom:20px}.statement{grid-template-columns:1fr;padding:27px}.nav-right>a:not(.nav-cta){display:none}.wrap{width:min(100% - 32px,1160px)}}@media(max-width:460px){.brand-logo{width:126px}.nav{height:70px}.nav-right{gap:0}.nav-cta{font-size:12px;padding:10px 13px}.hero{padding-top:48px}h1{font-size:52px}.hero-copy{font-size:16px}.visual{padding:15px;border-radius:0}.tracking-card{padding:16px}.status{font-size:10px}.timeline{gap:4px}.step{font-size:10px}.step strong{font-size:11px}.mini-row{gap:8px}.mini{padding:12px}.footer{flex-direction:column}}
+/* ==========================================================================
+   Shipped — landing page
+   1. Tokens  2. Base  3. Layout  4. Header  5. Hero  6. Phone  7. Journey
+   8. Ledger  9. Statement  10. Footer  11. Motion  12. Responsive
+   ========================================================================== */
 
-/* Rounded visual direction restored; requested copy changes retained. */
-.mark{border-radius:10px}
-.nav-cta,.btn{border-radius:999px}
-.visual{border:1px solid var(--line);border-radius:24px;background:var(--paper2);padding:24px}
-.visual:before{border-radius:50%;width:290px;height:290px;background:#EADFC8;top:-105px;right:-85px;opacity:1}
-.tracking-card{border:1px solid var(--line);border-radius:20px;background:var(--paper);padding:22px;margin-top:28px}
-.carrier-icon{border-radius:12px;background:#F3D9CC}
-.live-pill{border:1px solid #C9DCCB;border-radius:999px;background:#E6F0E6;color:var(--green);padding:6px 10px}
-.status{border:0;border-radius:999px;background:#D9E8DD;color:var(--green);padding:7px 10px}
-.mini{border:1px solid var(--line);border-radius:16px;background:var(--paper2);padding:15px}
-.section{padding:65px 0}
-.features{grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
-.feature{padding:8px 34px 8px 0;border:0;border-right:1px solid var(--line);border-radius:0;background:transparent;min-height:0}
-.feature+ .feature{padding-left:34px}
-.feature:last-child{border-right:0;padding-right:0}
-.feature-icon{width:62px;height:62px;border-radius:18px;background:#F9E5DC;border:0;color:var(--orange);display:grid;place-items:center;margin-bottom:26px}
-.feature-icon svg{width:30px;height:30px;display:block;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.feature h3{font-size:clamp(17px,1.6vw,22px);margin:0 0 12px}
-.feature p{font-size:16px;line-height:1.65}
-.statement{background:var(--ink);color:var(--paper);border-radius:22px;padding:38px;border:0}
-.footer{border-top:0;padding-top:28px}
-@media(max-width:800px){.visual{border:1px solid var(--line);padding:15px}.statement{padding:27px}.features{grid-template-columns:1fr;gap:0}.feature,.feature+ .feature,.feature:last-child{padding:22px 0;border-right:0;border-bottom: none;}.feature:first-child{padding-top:0}.feature:last-child{border-bottom: none;padding-bottom:0}.feature-icon{margin-bottom:18px}}
-@media(max-width:460px){.visual{border-radius:20px}.tracking-card{padding:16px}.mini{padding:12px}}
+/* 1. Tokens ---------------------------------------------------------------- */
+:root{
+  /* Brand (matches the iOS app's Palette) */
+  --paper:#FBF9F4;
+  --paper-2:#F2EEE6;
+  --paper-3:#EAE4D7;
+  --ink:#17181A;
+  --ink-2:#4F4C45;
+  --muted:#615D54;
+  --line:#DDD6C9;
+  --rust:#B83A15;
+  --rust-text:#8F2A0C;
+  --rust-tint:#F3D9CC;
+  --green:#17583A;
+  --green-tint:#D9E8DD;
+  --kraft:#C69858;
+  --kraft-light:#EBD3A6;
 
-/* Approved horizontal feature timeline */
-.features{position:relative;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding-top:0;}
-.features:before{content:"";position:absolute;left:16.6667%;right:16.6667%;top:99px;height:2px;background:var(--line);}
-.feature,.feature+ .feature,.feature:last-child{position:relative;padding:8px 30px 8px;border:0;border-radius:0;background:transparent;min-height:0;text-align:center;}
-.feature-icon{width:62px;height:62px;border-radius:20px;background:#F9E5DC;color:var(--orange);margin:0 auto 38px;position:relative;z-index:1;}
-.feature:before{content:"";position:absolute;top:91px;left:calc(50% - 5px);width:10px;height:10px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 4px var(--paper);z-index:2;}
-.feature h3{font-size:clamp(17px,1.6vw,22px);margin:0 0 12px;}
-.feature p{font-size:16px;line-height:1.65;max-width:350px;margin:0 auto;color:var(--muted);}
-@media(max-width:800px){.features{grid-template-columns:1fr;gap:0;padding-left:0}.features:before{left:30px;right:auto;top:30px;bottom:30px;width:2px;height:auto}.feature,.feature+ .feature,.feature:last-child{display:grid;grid-template-columns:62px 1fr;column-gap:22px;align-items:start;text-align:left;padding:22px 0;border:0;}
-.feature:first-child{padding-top:0}.feature:last-child{padding-bottom:0}.feature-icon{grid-column:1;grid-row:1 / span 2;margin:0 0 0 0}.feature:before{top:26px;left:26px}.feature h3{grid-column:2;margin:0 0 8px}.feature p{grid-column:2;max-width:none;margin:0}.feature:first-child:before{top:4px}}
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  --serif:Georgia,"Times New Roman",serif;
+
+  --gutter:clamp(16px,4vw,48px);
+  --max:1160px;
+  --radius-s:10px;
+  --radius-m:20px;
+  --radius-l:28px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --nav-bg:rgba(251,249,244,.92);
+  --band:#17181A;--band-text:#FBF9F4;--band-muted:#CFCBC1;--band-label:#E8A38D;
+  --btn-hover:#2c2d30;
+  color-scheme:light;
+  --kraft-chip:#EBD3A6;--kraft-ink:#3A2A18;
+  --nav-h:77px;            /* sticky header: 76px bar + 1px divider */
+  --sec-pad:clamp(64px,9vw,112px);
+}
+
+/* Dark theme: page chrome only. Phone mockups re-declare the light palette because the iOS app has no dark appearance. */
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --kraft-chip:#4A3F27;--kraft-ink:#EBD3A6;
+  --paper:#121311;--paper-2:#1A1B18;--paper-3:#252622;
+  --ink:#F4F1EA;--ink-2:#CBC7BC;--muted:#A5A094;--line:#34352F;
+  --rust:#E0623A;--rust-text:#F29571;--rust-tint:#3A1F15;
+  --nav-bg:rgba(18,19,17,.9);
+  --band:#1F201C;--band-text:#F4F1EA;
+  --btn-hover:#FFFFFF;
+}
+
+/* 2. Base ------------------------------------------------------------------ */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--font);letter-spacing:-.01em;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+h1,h2,h3,p{margin:0}
+:focus-visible{outline:3px solid var(--rust);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:16px;top:-80px;z-index:100;background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:999px;font-weight:650;font-size:14px}
+.skip:focus{top:12px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.label{font:600 12px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.label.rust{color:var(--rust-text)}
+.rule{border:0;border-top:1px dashed var(--line);margin:0}
+
+/* 3. Layout ---------------------------------------------------------------- */
+.wrap{width:min(var(--max),100% - var(--gutter)*2);margin-inline:auto}
+.section{padding:var(--sec-pad) 0;border-top:1px solid var(--line)}
+#how{border-top:0}
+/* land with the heading 32px under the header instead of a full section of padding */
+.section[id]{scroll-margin-top:calc(32px - var(--sec-pad))}
+.section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:24px 64px;align-items:end;margin-bottom:clamp(36px,5vw,64px)}
+.section-head h2{font-size:clamp(30px,4.2vw,48px);line-height:1.04;letter-spacing:-.045em;font-weight:660;max-width:15ch;margin-top:0}
+.section-head p{color:var(--ink-2);font-size:17px;line-height:1.65;max-width:44ch}
+
+/* 4. Header ---------------------------------------------------------------- */
+.nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand-logo{width:142px;height:auto;max-height:48px;object-fit:contain;object-position:left center}
+.brand-logo.on-dark{display:none}
+:root[data-theme="dark"] .brand-logo.on-light{display:none}
+:root[data-theme="dark"] .brand-logo.on-dark{display:block}
+.theme-toggle{display:grid;place-items:center;width:44px;height:44px;margin:-6px -8px -6px -10px;background:none;border:0;border-radius:50%;color:var(--ink-2);cursor:pointer}
+.theme-toggle:hover{color:var(--ink)}
+.theme-toggle svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.theme-toggle .sun{display:none}
+:root[data-theme="dark"] .theme-toggle .sun{display:block}
+:root[data-theme="dark"] .theme-toggle .moon{display:none}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:550;color:var(--ink-2)}
+.nav-links a{padding:10px 2px;position:relative}
+.nav-links a:hover{color:var(--ink)}
+.stamp{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--rust);color:var(--rust-text);padding:6px 11px;border-radius:6px;font:700 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;transform:rotate(-1.5deg)}
+.stamp i{width:6px;height:6px;border-radius:50%;background:var(--rust)}
+
+/* 5. Hero ------------------------------------------------------------------ */
+.hero{padding:clamp(36px,5vw,72px) 0 clamp(64px,8vw,104px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(32px,6vw,80px);align-items:center}
+h1{font-size:clamp(44px,6vw,84px);line-height:.98;letter-spacing:-.04em;font-weight:680;margin:0 0 24px}
+.accent,h1 em{white-space:nowrap;font-family:var(--serif);font-style:italic;font-weight:400;color:var(--rust);letter-spacing:-.05em}
+.lede{font-size:clamp(17px,1.6vw,19px);line-height:1.65;color:var(--ink-2);max-width:46ch}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font-weight:650;font-size:15px;transition:background .2s var(--ease),transform .2s var(--ease),border-color .2s}
+.btn-dark{background:var(--ink);color:var(--paper)}
+.btn-dark:hover{background:var(--btn-hover)}
+.btn-line{border:1px solid var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--paper-2)}
+.btn:active{transform:translateY(1px)}
+
+/* waybill: three plain facts */
+.waybill{margin-top:40px;max-width:520px;border-top:2px solid var(--ink);display:grid;grid-template-columns:repeat(3,1fr)}
+.waybill div{padding:14px 16px 0 0}
+.waybill div+div{padding-left:16px;border-left:1px dashed var(--line)}
+.waybill b{display:block;font-size:15px;font-weight:650;letter-spacing:-.02em;margin-top:6px}
+
+.hero-visual{position:relative;display:flex;justify-content:center;padding:32px 0 8px}
+.hero-visual::before{content:"";position:absolute;inset:0 4% 0 4%;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius-l)}
+.hero-visual .tape{position:absolute;top:0;left:50%;width:110px;height:30px;transform:translate(-50%,-50%) rotate(-2deg);background:rgba(184,58,21,.9);z-index:2}
+.hero-visual{padding-bottom:56px}
+.hero-visual .label-tag{position:absolute;left:5%;bottom:14px;z-index:3;background:var(--paper);border:1px solid var(--line);padding:12px 14px 10px;transform:rotate(-2deg);box-shadow:0 10px 30px -18px rgba(23,24,26,.5)}
+.hero-visual .label-tag svg{width:132px;height:30px;fill:var(--ink);margin-top:8px}
+
+/* 6. Phone (HTML recreation of the real iOS screens) ------------------------ */
+/* Proportions from Apple's iPhone 17 Pro specs: 71.9 x 150.0 mm body, 1206x2622 display (~2.65 mm edge in total).
+   Edge here is slimmed to 1.0% titanium rim + 1.2% black display border (2.2% total), measured against the phone's own width (cqw). */
+.phone{position:relative;z-index:1;width:min(100%,300px);aspect-ratio:1/2.12;container-type:inline-size;border-radius:16.4%/7.8%;background:linear-gradient(145deg,#85868b,#3a3b40 38%,#76777c 62%,#303135);box-shadow:0 40px 60px -34px rgba(23,24,26,.55),0 0 0 .5px rgba(0,0,0,.5);
+  --paper:#FBF9F4;--paper-2:#F2EEE6;--paper-3:#EAE4D7;--ink:#17181A;--ink-2:#4F4C45;--muted:#6A665D;--line:#DDD6C9;--rust:#B83A15;--rust-text:#8F2A0C;--rust-tint:#F3D9CC;color-scheme:light}
+.screen{container-type:inline-size;position:absolute;inset:2.2cqw;border-radius:14.2cqw;overflow:hidden;background:var(--paper-2);box-shadow:0 0 0 1.2cqw #050506}
+.screen .ui{--u:calc(100cqw / 440);position:absolute;inset:0;font-family:var(--font);color:var(--ink)}
+.island{position:absolute;top:calc(13*var(--u));left:50%;width:calc(130*var(--u));height:calc(38*var(--u));background:#000;border-radius:999px;transform:translateX(-50%);z-index:3}
+.statusbar{position:absolute;top:calc(18*var(--u));left:calc(50*var(--u));right:calc(42*var(--u));height:calc(34*var(--u));display:flex;justify-content:space-between;align-items:center;font-weight:650;font-size:calc(18*var(--u));letter-spacing:-.02em}
+.statusbar .ic{display:flex;align-items:center;gap:calc(6*var(--u));color:var(--ink)}
+.statusbar svg{display:block;max-width:none;height:auto}
+.statusbar .sg{width:calc(19*var(--u))}.statusbar .wf{width:calc(18*var(--u))}.statusbar .bt{width:calc(28*var(--u))}
+
+.s-pad{position:absolute;inset:calc(72*var(--u)) calc(16*var(--u)) 0}
+.s-top{display:flex;align-items:center;gap:calc(10*var(--u))}
+.glass{background:rgba(251,249,244,.9);border:1px solid var(--line);box-shadow:0 calc(6*var(--u)) calc(16*var(--u)) calc(-8*var(--u)) rgba(23,24,26,.25)}
+.s-brand{display:flex;align-items:center;gap:calc(7*var(--u));height:calc(44*var(--u));padding:0 calc(16*var(--u)) 0 calc(12*var(--u));border-radius:999px;font-weight:750;font-size:calc(17*var(--u));letter-spacing:-.03em}
+.s-brand svg{width:calc(17*var(--u));height:calc(17*var(--u))}
+.s-circle{width:calc(44*var(--u));height:calc(44*var(--u));border-radius:50%;display:grid;place-items:center;flex:none}
+.s-circle svg{width:calc(20*var(--u));height:calc(20*var(--u));stroke:var(--ink-2);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.s-circle.dark{background:var(--ink);border:0}
+.s-circle.dark svg{stroke:var(--paper);stroke-width:2.4}
+.s-spacer{flex:1}
+.s-h1{font-weight:750;font-size:calc(34*var(--u));letter-spacing:-.05em;line-height:1.1;margin:calc(20*var(--u)) calc(6*var(--u)) 0}
+.s-date{font-size:calc(15*var(--u));color:var(--muted);margin:calc(3*var(--u)) calc(6*var(--u)) 0}
+.s-sample{font:700 calc(10*var(--u))/1.2 var(--mono);letter-spacing:.09em;color:var(--rust-text);margin:calc(8*var(--u)) calc(6*var(--u)) 0}
+.s-sum{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(8*var(--u));margin-top:calc(14*var(--u))}
+.s-sum div{background:var(--paper);border:1px solid var(--line);border-radius:calc(22*var(--u));padding:calc(16*var(--u)) calc(14*var(--u));font-size:calc(14*var(--u));color:var(--ink-2)}
+.s-sum div.attn{background:#F1E2BE;border-color:#F1E2BE;color:#6B4200}
+.s-sum b{display:block;font-size:calc(34*var(--u));letter-spacing:-.04em;line-height:1.1;color:inherit;margin-bottom:calc(6*var(--u))}
+.s-sum div:not(.attn) b{color:var(--ink)}
+.s-card{background:var(--paper);border:1px solid var(--line);border-radius:calc(26*var(--u));padding:calc(18*var(--u))}
+.s-feature{margin-top:calc(12*var(--u));padding-bottom:calc(22*var(--u))}
+.s-pill{display:inline-flex;align-items:center;gap:calc(7*var(--u));background:var(--ink);color:var(--paper);height:calc(34*var(--u));padding:0 calc(14*var(--u));border-radius:999px;font-weight:650;font-size:calc(15*var(--u))}
+.s-pill svg{width:calc(14*var(--u));height:calc(14*var(--u))}
+.s-pillstack{display:inline-grid}
+.s-pillstack .s-pill{grid-area:1/1;justify-self:start;opacity:0;animation:pillshow 9s infinite}
+.s-pillstack .a{background:var(--rust-tint);color:var(--rust-text)}
+.s-pillstack .b{background:var(--ink);color:var(--paper);animation-delay:-6s}
+.s-pillstack .c{background:#D9E8DD;color:#17583A;animation-delay:-3s}
+@keyframes pillshow{0%{opacity:0;transform:translateY(calc(5*var(--u)))}3%,30%{opacity:1;transform:none}33.3%,100%{opacity:0;transform:translateY(calc(-5*var(--u)))}}
+.s-row{display:flex;justify-content:space-between;align-items:center}
+.s-tag{font:700 calc(11*var(--u))/1 var(--mono);letter-spacing:.12em;color:var(--ink-2)}
+.s-place{font-weight:750;font-size:calc(34*var(--u));letter-spacing:-.05em;margin-top:calc(18*var(--u));line-height:1.1}
+.s-meta{font-size:calc(16*var(--u));color:var(--muted);margin-top:calc(12*var(--u))}
+.s-sec{display:flex;justify-content:space-between;margin:calc(18*var(--u)) calc(6*var(--u)) calc(8*var(--u));font-weight:650;font-size:calc(17*var(--u))}
+.s-sec span{font:500 calc(13*var(--u)) var(--mono);color:var(--muted)}
+.s-list{padding:calc(12*var(--u)) calc(14*var(--u));display:flex;align-items:center;gap:calc(12*var(--u))}
+.s-chip{width:calc(42*var(--u));height:calc(42*var(--u));border-radius:calc(12*var(--u));background:var(--paper-3);display:grid;place-items:center;font-size:calc(13*var(--u));font-weight:650;color:var(--ink-2)}
+.s-list>div:nth-child(2){flex:1;min-width:0}
+.s-list b{display:block;font-size:calc(17*var(--u));line-height:1.2}
+.s-list small{display:block;margin-top:calc(3*var(--u));font-size:calc(14*var(--u));line-height:1.25;color:var(--muted)}
+.s-status{background:var(--rust-tint);color:var(--rust-text);font-weight:650;font-size:calc(13*var(--u));padding:calc(7*var(--u)) calc(11*var(--u));border-radius:999px;white-space:nowrap}
+.s-status::before{content:"";display:inline-block;width:calc(6*var(--u));height:calc(6*var(--u));border-radius:50%;background:var(--rust);margin-right:calc(6*var(--u));vertical-align:middle}
+.tabbar{position:absolute;left:calc(70*var(--u));right:calc(70*var(--u));bottom:calc(26*var(--u));height:calc(70*var(--u));border-radius:999px;padding:calc(8*var(--u));display:flex;align-items:center;justify-content:space-between}
+.tabbar .on{display:flex;align-items:center;gap:calc(8*var(--u));background:var(--ink);color:var(--paper);height:100%;padding:0 calc(22*var(--u));border-radius:999px;font-weight:650;font-size:calc(17*var(--u))}
+.tabbar svg{width:calc(20*var(--u));height:calc(20*var(--u))}
+.tabbar .off{width:calc(54*var(--u));display:grid;place-items:center}
+.tabbar .off svg{stroke:var(--ink-2);fill:none;stroke-width:1.8;stroke-linecap:round}
+
+/* detail screen */
+.s-back{display:flex;align-items:center;justify-content:space-between}
+.s-title{height:calc(44*var(--u));padding:0 calc(26*var(--u));border-radius:999px;display:grid;place-items:center;font-weight:650;font-size:calc(16*var(--u))}
+.s-sum2{margin-top:calc(14*var(--u))}
+.s-m{font-size:calc(13*var(--u));color:var(--ink-2);font-weight:600}
+.s-m .tag{font:700 calc(9*var(--u))/1 var(--mono);letter-spacing:.08em;color:var(--rust-text);background:var(--rust-tint);padding:calc(4*var(--u)) calc(8*var(--u));border-radius:999px;margin-left:calc(8*var(--u))}
+.s-eta-l{font-size:calc(13*var(--u));color:var(--muted);margin-top:calc(14*var(--u))}
+.s-eta{font-weight:750;font-size:calc(28*var(--u));letter-spacing:-.04em;margin-top:calc(3*var(--u));line-height:1.1}
+.s-warn{font-size:calc(12*var(--u));color:var(--rust-text);font-weight:600;margin-top:calc(4*var(--u))}
+.s-route{display:grid;grid-template-columns:auto 1fr auto;gap:calc(14*var(--u));align-items:center;margin-top:calc(16*var(--u))}
+.s-route b{display:block;font-size:calc(28*var(--u));letter-spacing:-.04em;line-height:1}
+.s-route small{font-size:calc(13*var(--u));color:var(--muted)}
+.s-route .bar{height:calc(3*var(--u));background:linear-gradient(90deg,var(--rust) 0 92%,var(--line) 92%);border-radius:2px;position:relative}
+.s-route .bar::after{content:"";position:absolute;left:50%;top:50%;width:calc(26*var(--u));height:calc(26*var(--u));transform:translate(-50%,-50%);background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23B83A15'%3E%3Cpath d='m12 2 9 5v10l-9 5-9-5V7z'/%3E%3C/svg%3E") center/70% no-repeat}
+.s-trk{border-top:1px solid #ECE6DA;margin-top:calc(16*var(--u));padding-top:calc(14*var(--u));display:flex;justify-content:space-between;align-items:center}
+.s-trk small{display:block;font-size:calc(13*var(--u));color:var(--muted)}
+.s-trk b{font:650 calc(17*var(--u)) var(--mono)}
+.s-trk .copy{background:var(--paper-3);border-radius:999px;padding:calc(10*var(--u)) calc(16*var(--u));font-weight:650;font-size:calc(14*var(--u))}
+.s-map{height:calc(150*var(--u));margin-top:calc(12*var(--u));border-radius:calc(26*var(--u));background:#DCE3DE;position:relative;overflow:hidden;border:1px solid var(--line)}
+.s-map svg{position:absolute;inset:0;width:100%;height:100%}
+.s-map span{position:absolute;left:calc(14*var(--u));top:calc(14*var(--u));background:var(--paper);border-radius:999px;font-weight:600;font-size:calc(13*var(--u));padding:calc(7*var(--u)) calc(12*var(--u))}
+.s-jr{margin-top:calc(12*var(--u))}
+.s-jr .s-row{align-items:baseline}
+.s-jr h4{margin:0;font-size:calc(19*var(--u));font-weight:650}
+.s-jr small{font-size:calc(12*var(--u));color:var(--muted)}
+.ev{display:grid;grid-template-columns:calc(22*var(--u)) 1fr;gap:calc(12*var(--u));margin-top:calc(14*var(--u))}
+.ev i{width:calc(18*var(--u));height:calc(18*var(--u));border-radius:50%;background:var(--paper-3);margin-top:calc(4*var(--u))}
+.ev.est i{background:none;border:2px dashed #6B4200}
+.ev b{font-size:calc(17*var(--u));font-weight:600}
+.ev em{font-style:normal;font:700 calc(9*var(--u)) var(--mono);letter-spacing:.08em;color:var(--rust-text);margin-left:calc(6*var(--u))}
+.ev small{display:block;font-size:calc(14*var(--u));color:var(--muted)}
+
+/* showcase screens: scrolled detail, History, Search */
+.s-scrolled{inset:calc(72*var(--u)) calc(16*var(--u)) 0}
+.s-scrolled .s-back{position:relative;z-index:2;background:rgba(242,238,230,.96);padding-bottom:calc(8*var(--u))}
+.s-scroll{position:absolute;left:0;right:0;top:calc(56*var(--u));bottom:0;overflow:hidden}
+.s-scroll>.s-card:first-of-type{margin-top:calc(-226*var(--u))}
+.s-scroll.flat>.s-card:first-of-type{margin-top:0}
+.s-scroll.flat{overflow:visible}
+.pin[data-k=eta]{top:calc(106*var(--u))}.pin[data-k=trk]{top:calc(279*var(--u))}.pin[data-k=map]{top:calc(422*var(--u))}.pin[data-k=jr]{top:calc(544*var(--u))}
+.pin{position:absolute;left:calc(-9*var(--u));z-index:4;width:calc(26*var(--u));height:calc(26*var(--u));margin-top:calc(-13*var(--u));border-radius:50%;background:var(--rust);color:#fff;display:grid;place-items:center;font:700 calc(13*var(--u))/1 var(--font);font-style:normal;box-shadow:0 0 0 calc(3*var(--u)) rgba(184,58,21,.22)}
+.s-searchbar{display:flex;align-items:center;gap:calc(11*var(--u));height:calc(48*var(--u));margin-top:calc(14*var(--u));padding:0 calc(6*var(--u)) 0 calc(16*var(--u));background:var(--paper);border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:calc(16*var(--u))}
+.s-searchbar>svg{width:calc(18*var(--u));height:calc(18*var(--u));stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round}
+.s-searchbar span{flex:1}
+.s-searchbar i{width:calc(36*var(--u));height:calc(36*var(--u));border-radius:50%;background:var(--paper-3);display:grid;place-items:center}
+.s-searchbar i svg{width:calc(15*var(--u));height:calc(15*var(--u));stroke:var(--ink-2);fill:none;stroke-width:2;stroke-linecap:round}
+.s-seg{display:flex;height:calc(44*var(--u));margin-top:calc(14*var(--u));padding:calc(3*var(--u));border-radius:999px}
+.s-seg span{flex:1;display:grid;place-items:center;border-radius:999px;font-weight:650;font-size:calc(13*var(--u));color:var(--muted)}
+.s-seg .on{background:var(--ink);color:var(--paper)}
+.s-empty{margin-top:calc(24*var(--u));text-align:center;padding:calc(30*var(--u)) calc(22*var(--u))}
+.s-empty i{display:grid;place-items:center;width:calc(92*var(--u));height:calc(92*var(--u));margin:0 auto calc(8*var(--u));border-radius:50%;background:var(--paper-3)}
+.s-empty i svg{width:calc(42*var(--u));height:calc(42*var(--u));stroke:var(--rust);fill:none;stroke-width:1.2;stroke-linejoin:round;opacity:.85}
+.s-empty b{display:block;font-size:calc(22*var(--u));letter-spacing:-.03em;margin-bottom:calc(8*var(--u))}
+.s-empty p{font-size:calc(14*var(--u));line-height:1.45;color:var(--ink-2)}
+.s-empty small{display:block;margin-top:calc(10*var(--u));font-size:calc(12*var(--u));color:var(--muted);font-weight:600}
+.s-find{display:flex;align-items:center;gap:calc(10*var(--u))}
+.s-field{flex:1;display:flex;align-items:center;gap:calc(9*var(--u));height:calc(48*var(--u));padding:0 calc(15*var(--u));background:var(--paper);border:1px solid var(--line);border-radius:999px;font-size:calc(16*var(--u))}
+.s-field svg{width:calc(18*var(--u));height:calc(18*var(--u));stroke:var(--muted);fill:none;stroke-width:1.8;stroke-linecap:round}
+.s-find em{font-style:normal;font-weight:550;font-size:calc(15*var(--u));color:var(--rust-text)}
+.s-scope{display:flex;gap:calc(8*var(--u));margin-top:calc(14*var(--u))}
+.s-scope span{padding:calc(9*var(--u)) calc(15*var(--u));border-radius:999px;background:var(--paper-3);font-weight:650;font-size:calc(13*var(--u));color:var(--ink-2)}
+.s-scope .on{background:var(--ink);color:var(--paper)}
+.s-lib{display:flex;align-items:center;gap:calc(12*var(--u));padding:calc(13*var(--u)) calc(14*var(--u));border-radius:calc(24*var(--u))}
+.s-mono{flex:none;width:calc(44*var(--u));height:calc(44*var(--u));border-radius:calc(14*var(--u));background:rgba(243,217,204,.62);color:var(--rust-text);display:grid;place-items:center;font-weight:750;font-size:calc(11*var(--u))}
+.s-lib div+div{flex:1;min-width:0}
+.s-lib b{display:block;font-size:calc(15*var(--u));line-height:1.2}
+.s-lib b em{font:700 calc(9*var(--u)) var(--mono);color:var(--rust-text);margin-left:calc(6*var(--u))}
+.s-lib small{display:block;font-size:calc(12*var(--u));color:var(--muted);margin-top:calc(3*var(--u));line-height:1.25;white-space:nowrap}
+.s-lib .s-status{flex:none;flex-basis:auto}
+
+/* journey phone: layered screens */
+.journey-phone .scr{position:absolute;inset:0}
+.journey-phone .scr:not(.scr-search){display:none}
+.journey-phone .chrome{z-index:6;pointer-events:none}
+.journey-phone .s-pad{top:calc(72*var(--u))}
+.s-lbl{font-weight:650;font-size:calc(12*var(--u));color:var(--ink-2);margin:0 calc(4*var(--u)) calc(8*var(--u))}
+.s-lbl span{font-weight:500;color:var(--muted);font-size:calc(11*var(--u))}
+.s-input{display:flex;align-items:center;justify-content:space-between;min-height:calc(56*var(--u));padding:0 calc(8*var(--u)) 0 calc(15*var(--u));background:var(--paper);border:1px solid var(--line);border-radius:calc(18*var(--u));font-weight:550;font-size:calc(16*var(--u))}
+.s-input em{font-style:normal;font-weight:650;font-size:calc(13*var(--u));color:var(--rust-text);background:var(--rust-tint);padding:calc(11*var(--u)) calc(13*var(--u));border-radius:999px}
+.s-input.name{min-height:calc(52*var(--u));font-weight:400;font-size:calc(15*var(--u))}
+.s-couriers{display:grid;grid-template-columns:1fr 1fr;gap:calc(8*var(--u))}
+.s-cour{display:flex;align-items:center;gap:calc(9*var(--u));min-height:calc(50*var(--u));padding:0 calc(9*var(--u));background:var(--paper);border:1px solid var(--line);border-radius:calc(16*var(--u));color:var(--rust)}
+.s-cour b{flex:none;width:calc(43*var(--u));height:calc(32*var(--u));display:grid;place-items:center;border-radius:calc(10*var(--u));background:var(--paper-3);color:var(--ink-2);font-size:calc(9*var(--u));font-weight:750}
+.s-cour span{flex:1;font-weight:650;font-size:calc(12*var(--u));color:var(--ink);white-space:nowrap}
+.s-cour svg{width:calc(14*var(--u));height:calc(14*var(--u))}
+.s-cour.sel{border:calc(1.5*var(--u)) solid var(--rust)}
+.s-cour.sel b{background:var(--rust-tint);color:var(--rust-text)}
+.s-fine{font-size:calc(11*var(--u));color:var(--muted);margin:calc(9*var(--u)) calc(4*var(--u)) 0;line-height:1.35}
+.s-fine.rust{color:var(--rust-text);font-weight:550;font-size:calc(12*var(--u));margin:calc(16*var(--u)) calc(6*var(--u)) 0}
+.s-dock{position:absolute;left:calc(16*var(--u));right:calc(16*var(--u));bottom:calc(22*var(--u));padding:calc(8*var(--u));border-radius:calc(30*var(--u))}
+.s-dock span{display:flex;align-items:center;justify-content:center;gap:calc(8*var(--u));height:calc(50*var(--u));border-radius:999px;background:var(--ink);color:var(--paper);font-weight:650;font-size:calc(15*var(--u))}
+.s-dock i{font-style:normal;font-size:calc(14*var(--u))}
+.s-conf{margin-top:calc(16*var(--u));padding:calc(18*var(--u));border-radius:calc(24*var(--u))}
+.s-localtag{display:flex;align-items:center;gap:calc(8*var(--u));font-weight:750;font-size:calc(10*var(--u));letter-spacing:.08em;color:var(--muted);margin-bottom:calc(14*var(--u))}
+.s-localtag svg{width:calc(16*var(--u));height:calc(16*var(--u))}
+.s-confname{font-weight:650;font-size:calc(21*var(--u));letter-spacing:-.02em;margin-bottom:calc(12*var(--u))}
+.s-crow{display:flex;justify-content:space-between;align-items:baseline}
+.s-conf small{font-size:calc(12*var(--u));color:var(--muted);font-weight:550}
+.s-crow b{font-size:calc(13*var(--u))}
+.s-conf hr{border:0;border-top:1px solid #ECE6DA;margin:calc(9*var(--u)) 0}
+.s-conf code{display:block;margin-top:calc(6*var(--u));font:650 calc(13*var(--u)) var(--mono)}
+
+/* 7. Journey --------------------------------------------------------------- */
+.journey{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,7vw,96px);align-items:start}
+.journey-phone{display:flex;justify-content:center}
+.stops{list-style:none;margin:0;padding:0;position:relative}
+.stop:not(:last-child)::before,.stop:not(:last-child)::after{content:"";position:absolute;left:19px;top:40px;bottom:0;width:2px;z-index:0;background:var(--line)}
+.stop:not(:last-child)::after{background:var(--rust);transform:scaleY(0);transform-origin:top;transition:transform .9s var(--ease)}
+.stops-wrap{position:relative}
+.stops-wrap.in .stop:not(:last-child)::after{transform:none}
+.stops-wrap.in .stop:nth-child(2)::after{transition-delay:.7s}
+.rider{display:none}
+.stop{position:relative;padding:0 0 clamp(40px,6vw,64px) 68px}
+.stop:last-child{padding-bottom:0}
+.stop .node{position:absolute;left:0;top:0;z-index:1;width:40px;height:40px;border-radius:50%;background:var(--paper);border:2px solid var(--rust);display:flex;align-items:center;justify-content:center;font:700 12px/1 var(--mono);letter-spacing:0;font-variant-numeric:tabular-nums;color:var(--rust-text)}
+.stop h3{font-size:clamp(24px,2.8vw,32px);letter-spacing:-.04em;line-height:1.1;font-weight:660;margin:2px 0 12px}
+.stop p{color:var(--ink-2);max-width:48ch;font-size:16.5px;line-height:1.65}
+.stop ul{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.stop li{font:600 12px/1 var(--mono);letter-spacing:.04em;border:1px solid var(--line);background:var(--paper);padding:9px 12px;border-radius:6px;color:var(--ink-2)}
+
+/* Desktop only: the journey pins in place and the marker slides 01 -> 02 -> 03 as you scroll (driven by the script below). */
+@media (min-width:981px) and (min-height:760px) and (prefers-reduced-motion:no-preference){
+  .journey-track{height:250vh;position:relative}
+  .journey{position:sticky;top:calc(var(--nav-h) + 12px)}
+  .stop{padding-bottom:clamp(24px,4vh,44px);transition:opacity .35s var(--ease)}
+  .stop:last-child{padding-bottom:0}
+  #journey-track.pinned .journey-phone .scr{display:block;opacity:0;will-change:opacity,transform}
+  #journey-track.pinned .journey-phone .scr-add{opacity:1}
+  .stops-wrap.pinned .stop{opacity:.34}
+  .stops-wrap.pinned .stop.active{opacity:1}
+  .stops-wrap.pinned .stop:not(:last-child)::after{transform:scaleY(var(--fill,0));transition:none}
+  .stops-wrap.pinned .rider{position:absolute;left:0;top:0;z-index:2;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--rust);color:#FBF9F4;font:700 12px/1 var(--mono);box-shadow:0 0 0 6px var(--paper);will-change:transform}
+}
+
+/* 8. Showcase -------------------------------------------------------------- */
+.feat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center;padding:clamp(36px,5vw,64px) 0}
+.feat:first-of-type{padding-top:0}
+.feat.flip .feat-copy{order:2}
+.feat-copy h3{font-size:clamp(30px,4vw,46px);line-height:1.02;letter-spacing:-.05em;font-weight:680;margin:0 0 16px;max-width:12ch}
+.feat-copy>p{color:var(--ink-2);font-size:17px;line-height:1.65;max-width:42ch}
+.points{list-style:none;margin:24px 0 0;padding:0;max-width:44ch}
+.points li{display:flex;align-items:center;gap:12px;padding:9px 0;font-size:15px;font-weight:600;letter-spacing:-.02em}
+.points li em{font-style:normal;flex:1}
+.points .n{flex:none;display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--rust);color:#fff;font:700 12px/1 var(--mono)}
+.points small{margin-left:auto;font:600 12px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:right}
+.points small.sample{color:var(--rust-text)}
+.stage{position:relative;display:flex;justify-content:center;align-items:flex-start;background:var(--paper-2);border:0;border-radius:var(--radius-l);padding:40px 0 0;overflow:hidden;height:clamp(420px,46vw,520px)}
+.stage .phone{flex:none}
+.stage.tall{height:auto;padding-bottom:40px}
+.stage .stage-tag{position:absolute;right:16px;bottom:14px;z-index:3;font:700 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--rust-text);background:var(--paper);border:1px solid var(--line);padding:7px 9px;border-radius:6px}
+.duo{display:flex;justify-content:center;width:100%}
+.duo .phone{width:min(46%,250px)}
+.duo .phone:first-child{transform:rotate(-4deg) translateX(6%)}
+.duo .phone:last-child{margin-top:56px;margin-left:-4%;transform:rotate(3deg)}
+#showcase .section-head{margin-bottom:clamp(72px,10vw,136px)}
+.showcase-note{margin-top:8px;padding-top:20px;font-size:14px;color:var(--muted);max-width:68ch}
+
+/* 9. Statement ------------------------------------------------------------- */
+.statement{background:var(--band);color:var(--band-text);border:1px solid var(--line);border-radius:var(--radius-m);padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:32px clamp(32px,6vw,72px);align-items:center;position:relative;overflow:hidden}
+.statement .label{color:var(--band-label)}
+.statement h2{font-size:clamp(30px,4.4vw,52px);letter-spacing:-.05em;line-height:1.04;margin-top:14px;font-weight:660}
+.statement h2 .accent{font-size:1.12em;line-height:.9}
+.statement p{color:var(--band-muted);line-height:1.7;font-size:16.5px}
+.statement .bars{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px dashed rgba(244,241,234,.25);padding-top:22px}
+.statement .bars svg{height:34px;width:min(300px,60%);fill:var(--band-text);opacity:.9}
+.statement .bars span{font:600 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--band-muted)}
+
+/* 10. Footer --------------------------------------------------------------- */
+.footer{padding:36px 0 48px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--muted);align-items:center}
+.footer strong{color:var(--ink)}
+.footer a{padding:10px 0}
+
+/* 11. Motion --------------------------------------------------------------- */
+.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+  .js .reveal{opacity:1;transform:none}
+  .s-pillstack .s-pill{animation:none;opacity:0}
+  .s-pillstack .b{opacity:1}
+  .stop:not(:last-child)::after{transform:none}
+  .rider{display:none!important}
+}
+
+/* 12. Responsive ----------------------------------------------------------- */
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .hero-visual{max-width:460px;margin-inline:auto;width:100%}
+  .journey{grid-template-columns:1fr}
+  .journey-phone{position:static;order:2}
+  .section-head,.statement,.feat{grid-template-columns:1fr}
+  .feat.flip .feat-copy{order:0}
+  .feat-copy h3{max-width:none}
+}
+@media (max-width:720px){
+  .nav-links a:not(.stamp){display:none}
+  :root{--nav-h:69px}
+  .nav-in{height:68px}
+  .nav-links{gap:14px}
+  .stamp{white-space:nowrap;padding:5px 8px;font-size:10px;letter-spacing:.1em}
+  .brand-logo{width:126px}
+  .waybill{grid-template-columns:1fr;border-top-width:2px}
+  .waybill div,.waybill div+div{padding:12px 0;border-left:0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;align-items:baseline}
+  .waybill b{margin-top:0}
+  .statement .bars span{display:none}
+  .hero-visual .label-tag{left:2%}
+  .stage{height:clamp(440px,125vw,540px)}
+  .stage.tall{height:auto}
+}
+
+/* ==========================================================================
+   LABEL TEST PAGE: shipping-label ideas layered on top of the base page
+   1 tracking strip  2 label headers  3 waybill  4 stamps  5 perforation/notch
+   6 receipt footer  7 label type
+   ========================================================================== */
+
+/* 7. label type: heavier uppercase mono for codes */
+.label{font-weight:800;letter-spacing:.16em}
+.points small{font-weight:800;letter-spacing:.1em}
+.waybill .label{font-weight:800}
+.code{font:800 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+
+/* 1. tracking strip (wide screens only) */
+.trk{display:none}
+@media (min-width:1360px){
+  .trk{display:block;position:fixed;z-index:40;left:22px;top:calc(var(--nav-h) + 28px);bottom:28px;width:56px;pointer-events:none}
+  .trk .rail{position:absolute;left:7px;top:0;bottom:0;width:2px;background:var(--line)}
+  .trk .ticks{position:absolute;left:11px;top:0;bottom:0;width:7px;background:repeating-linear-gradient(to bottom,var(--line) 0 1px,transparent 1px 12px)}
+  .trk .fill{position:absolute;left:7px;top:0;width:2px;height:0;background:var(--rust)}
+  .trk .mk{position:absolute;left:0;top:0;width:16px;height:16px;margin-top:-8px;border-radius:50%;background:var(--rust);box-shadow:0 0 0 5px var(--paper)}
+  .trk .st{position:absolute;left:24px;transform:translateY(-4px);writing-mode:vertical-rl;font:800 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);white-space:nowrap;transition:color .25s}
+  .trk .st i{font-style:normal;color:var(--rust-text);margin-bottom:6px}
+  .trk .st.on{color:var(--ink)}
+}
+
+/* 2. label headers */
+.lbl-bar{display:flex;align-items:center;gap:14px;margin-bottom:clamp(28px,4vw,44px)}
+.lbl-bar .svc{background:var(--kraft-chip);color:var(--kraft-ink);padding:7px 10px;border-radius:5px;font:800 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.lbl-bar .route{font:800 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.lbl-bar svg{margin-left:auto;width:clamp(90px,14vw,150px);height:26px;fill:var(--ink);opacity:.85}
+
+/* 3. waybill (replaces the little hero tag) */
+.hero-visual .label-tag.wb{width:216px;padding:0;background:none;border:0;box-shadow:none;left:2%;bottom:10px;transform:rotate(-2deg);filter:drop-shadow(0 8px 12px rgba(23,24,26,.2));transition:transform .45s var(--ease),filter .45s var(--ease)}
+.wb-in{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:12px 14px;clip-path:polygon(0 0,100% 0,100% 100%,100% 100%,0 100%);transition:clip-path .4s var(--ease)}
+/* hover: the label lifts and its bottom-right corner peels back */
+.hero-visual .label-tag.wb::after{content:"";position:absolute;right:0;bottom:0;width:0;height:0;background:linear-gradient(135deg,#fff 0%,#ece7db 52%,#aaa391 100%);clip-path:polygon(0 0,100% 0,0 100%);border-top-left-radius:6px;transition:width .4s var(--ease),height .4s var(--ease)}
+.hero-visual .label-tag.wb:hover,.hero-visual .label-tag.wb.on{transform:rotate(0) translateY(-12px) scale(1.04);filter:drop-shadow(0 22px 20px rgba(23,24,26,.3))}
+.hero-visual .label-tag.wb:hover .wb-in,.hero-visual .label-tag.wb.on .wb-in{clip-path:polygon(0 0,100% 0,100% calc(100% - 78px),calc(100% - 78px) 100%,0 100%)}
+.hero-visual .label-tag.wb:hover::after,.hero-visual .label-tag.wb.on::after{width:78px;height:78px}
+.wb-top{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:7px;margin-bottom:8px}
+.wb-top span{font:800 9px/1 var(--mono);letter-spacing:.14em;color:var(--rust-text)}
+.wb-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px 10px;font:800 10px/1.25 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.wb-grid i{display:block;font-style:normal;font-size:8px;letter-spacing:.14em;color:var(--muted);margin-bottom:1px}
+.wb-grid .wide{grid-column:1/-1}
+.hero-visual .label-tag.wb svg{width:100%;height:34px;margin-top:10px}
+.wb-trk{font:800 10px/1 var(--mono);letter-spacing:.2em;text-align:center;margin-top:6px}
+
+/* 4. stamps */
+.s-feature{position:relative}
+.s-stamp{position:absolute;right:calc(14*var(--u));bottom:calc(16*var(--u));padding:calc(5*var(--u)) calc(11*var(--u));border:calc(2.5*var(--u)) solid #17583A;border-radius:calc(6*var(--u));color:#17583A;font:800 calc(15*var(--u))/1 var(--mono);letter-spacing:.14em;opacity:0;transform:rotate(-11deg);animation:stampslam 9s infinite}
+@keyframes stampslam{0%,65%{opacity:0;transform:rotate(-11deg) scale(1.7)}68%{opacity:.92;transform:rotate(-11deg) scale(.96)}69.5%{transform:rotate(-11deg) scale(1)}95%{opacity:.92}100%{opacity:0;transform:rotate(-11deg) scale(1)}}
+.btn{position:relative;overflow:hidden}
+.btn .ink{position:absolute;width:54px;height:54px;margin:-27px 0 0 -27px;border:2px solid currentColor;border-radius:50%;pointer-events:none;opacity:0;animation:inkstamp .7s var(--ease) forwards}
+.btn .ink::after{content:"";position:absolute;inset:6px;border:1px dashed currentColor;border-radius:50%}
+@keyframes inkstamp{0%{opacity:0;transform:scale(1.9) rotate(-14deg)}25%{opacity:.55}100%{opacity:0;transform:scale(1) rotate(-14deg)}}
+
+/* 5. perforation + punch notches */
+.cut{position:relative;height:28px;display:flex;align-items:center}
+.cut::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px dashed var(--line)}
+.cut svg{position:relative;margin-left:24px;width:22px;height:22px;padding:0 3px;box-sizing:content-box;background:var(--paper);stroke:var(--muted);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.statement{-webkit-mask:radial-gradient(circle 15px at 0 50%,#0000 97%,#000) left/51% 100% no-repeat,radial-gradient(circle 15px at 100% 50%,#0000 97%,#000) right/51% 100% no-repeat;mask:radial-gradient(circle 15px at 0 50%,#0000 97%,#000) left/51% 100% no-repeat,radial-gradient(circle 15px at 100% 50%,#0000 97%,#000) right/51% 100% no-repeat}
+
+/* 6. receipt footer */
+.receipt-wrap{padding:24px 0 72px;display:flex;justify-content:center}
+.receipt{width:min(380px,100%);background:var(--paper-2);padding:28px 26px 40px;text-align:center;font:700 12px/1.9 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/16px 100%;padding-bottom:46px}
+.receipt .wm{width:112px;height:auto;margin:0 auto 12px;fill:currentColor;color:var(--ink)}
+.hero-visual .label-tag.wb .wb-top .wm{width:68px;height:auto;margin:0;color:var(--ink)}
+.receipt p{margin:0}
+.receipt hr{border:0;border-top:2px dashed var(--line);margin:12px 0}
+.receipt svg{width:70%;height:34px;margin:14px auto 8px;fill:var(--ink)}
+.receipt .thanks{color:var(--ink);font-weight:800}
+.receipt a{display:inline-block;margin-top:10px;padding:8px 4px;color:var(--rust-text);font-weight:800}
+
+@media (max-width:720px){
+  .lbl-bar svg{display:none}
+  .hero-visual .label-tag.wb{width:190px;left:0}
+}
+@media (prefers-reduced-motion:reduce){.s-stamp{animation:none;opacity:0}.btn .ink{display:none}.hero-visual .label-tag.wb,.wb-in,.hero-visual .label-tag.wb::after{transition:none}}
 </style>
-</head><body>
-<header class="wrap nav"><a class="brand" href="#top" aria-label="Shipped home"><img src="shipped-logo-horizontal.svg" alt="Shipped" class="brand-logo"></a></header>
-<main id="top" class="wrap">
-<section class="hero"><div><h1>Every parcel.<br>One place.<br><em>Less wondering.</em></h1><p class="hero-copy">Shipped is being built to bring your deliveries together in one thoughtful, easy-to-follow tracking experience.</p><div class="actions"><a class="btn btn-dark" href="#about">Get to know Shipped <span>↗</span></a><a class="btn btn-light" href="#principles">Our approach</a></div><p class="tiny-note">Currently in development</p></div>
-<div class="visual" aria-label="Illustrative shipment tracking interface"><div class="visual-head"><span>A clearer picture</span><span class="live-pill">Tracking, simplified</span></div><article class="tracking-card"><div class="card-top"><div class="carrier"><div class="carrier-icon">↗</div><div><div class="small-label">Your delivery</div><div class="parcel-name">A little something on its way</div></div></div><span class="status">In transit</span></div><div class="track-num">TRACKING NUMBER &nbsp; •••• •••• 4821</div><div class="timeline"><div class="step done"><strong>Picked up</strong>Shipment received</div><div class="step done"><strong>On the way</strong>Moving through network</div><div class="step"><strong>Delivered</strong>At your door</div></div></article><div class="mini-row"><div class="mini"><span>ALL YOUR PARCELS</span><b>One simple overview</b><span>Less app-hopping</span></div><div class="mini"><span>THE IMPORTANT BITS</span><b>Status at a glance</b><span>Updates without the clutter</span></div></div></div></section>
-<section id="about" class="section"><div class="section-top"><div><div class="eyebrow">The idea</div><h2>Your deliveries, without the detective work.</h2></div><p class="section-intro">Tracking a package shouldn't mean searching through messages, switching between carrier sites, or wondering what the latest status actually means.</p></div><div class="features"><article class="feature"><div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4.5 7.7 7.5 4.4 7.5-4.4M12 21v-8.9M8 5.3l8 4.6v4.3"/></svg></div><h3>One place to look</h3><p>A home for shipments across different carriers, designed to make the overall picture easier to understand.</p></article><article class="feature"><div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div><h3>Clear, useful status</h3><p>Keep the focus on where a parcel is in its journey and what has happened so far.</p></article><article class="feature"><div class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" fill="#F9E5DC"/><circle cx="15" cy="12" r="2" fill="#F9E5DC"/><circle cx="8" cy="18" r="2" fill="#F9E5DC"/></svg></div><h3>Thoughtful by design</h3><p>A calm interface with careful details, so checking a delivery feels simple instead of noisy.</p></article></div></section>
-<section id="principles" class="section"><div class="statement"><div><div class="eyebrow">Built with intention</div><h2>Useful first.<br>Complicated never.</h2></div><p>Shipped is in development. We're evaluating carrier integrations and shaping the product around a simple idea: package tracking should feel organized, clear, and dependable. The details will evolve as the app does.</p></div></section>
-</main><footer class="wrap footer"><div><strong>Shipped</strong> · A work in progress.</div></footer>
-</body></html>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- Reusable barcode artwork (decorative) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="barcode" viewBox="0 0 320 40" preserveAspectRatio="none"><rect x="0" width="3" height="40"/><rect x="5" width="4" height="40"/><rect x="13" width="2" height="40"/><rect x="17" width="6" height="40"/><rect x="25" width="3" height="40"/><rect x="32" width="2" height="40"/><rect x="38" width="2" height="40"/><rect x="42" width="2" height="40"/><rect x="47" width="4" height="40"/><rect x="53" width="2" height="40"/><rect x="57" width="6" height="40"/><rect x="66" width="2" height="40"/><rect x="72" width="2" height="40"/><rect x="76" width="6" height="40"/><rect x="84" width="6" height="40"/><rect x="94" width="4" height="40"/><rect x="100" width="2" height="40"/><rect x="104" width="6" height="40"/><rect x="112" width="3" height="40"/><rect x="118" width="2" height="40"/><rect x="124" width="2" height="40"/><rect x="130" width="3" height="40"/><rect x="137" width="2" height="40"/><rect x="141" width="6" height="40"/><rect x="151" width="2" height="40"/><rect x="156" width="2" height="40"/><rect x="162" width="2" height="40"/><rect x="168" width="2" height="40"/><rect x="174" width="2" height="40"/><rect x="179" width="6" height="40"/><rect x="188" width="3" height="40"/><rect x="194" width="6" height="40"/><rect x="203" width="3" height="40"/><rect x="209" width="2" height="40"/><rect x="213" width="2" height="40"/><rect x="217" width="6" height="40"/><rect x="226" width="6" height="40"/><rect x="235" width="3" height="40"/><rect x="242" width="4" height="40"/><rect x="249" width="6" height="40"/><rect x="257" width="2" height="40"/><rect x="263" width="4" height="40"/><rect x="269" width="3" height="40"/><rect x="274" width="4" height="40"/><rect x="281" width="2" height="40"/><rect x="287" width="2" height="40"/><rect x="293" width="6" height="40"/><rect x="302" width="3" height="40"/><rect x="309" width="3" height="40"/><rect x="316" width="4" height="40"/></symbol>
+    <symbol id="wordmark" viewBox="226 56 534 143"><path d="M49.4384765625 1.7578125C76.318359375 1.7578125 92.724609375 -11.2060546875 92.724609375 -32.2265625C92.724609375 -48.6328125 82.3974609375 -58.2275390625 59.1064453125 -63.134765625L48.6328125 -65.4052734375C35.2294921875 -68.3349609375 29.8095703125 -72.0703125 29.8095703125 -78.80859375C29.8095703125 -86.7919921875 37.646484375 -92.3583984375 48.779296875 -92.3583984375C60.498046875 -92.3583984375 68.1884765625 -85.986328125 68.994140625 -75.6591796875H90.087890625C89.4287109375 -97.6318359375 73.828125 -110.888671875 48.7060546875 -110.888671875C23.876953125 -110.888671875 7.2509765625 -97.55859375 7.2509765625 -77.7099609375C7.2509765625 -62.109375 17.724609375 -52.0751953125 39.3310546875 -47.3876953125L50.830078125 -44.8974609375C64.6728515625 -41.89453125 70.3857421875 -37.79296875 70.3857421875 -30.76171875C70.3857421875 -22.265625 62.109375 -16.7724609375 49.5849609375 -16.7724609375C35.595703125 -16.7724609375 27.1728515625 -23.8037109375 26.8798828125 -35.8154296875H5.126953125C5.126953125 -12.0849609375 21.4599609375 1.7578125 49.4384765625 1.7578125ZM121.8251953125 -42.9931640625C121.8251953125 -55.0048828125 128.05078125 -60.3515625 136.986328125 -60.3515625C145.9951171875 -60.3515625 151.1953125 -54.8583984375 151.1953125 -44.4580078125V0.0H172.728515625V-48.4130859375C172.728515625 -67.96875 162.1083984375 -78.955078125 145.62890625 -78.955078125C134.7158203125 -78.955078125 127.025390625 -74.1943359375 121.8251953125 -65.6982421875V-109.130859375H100.21875V0.0H121.8251953125ZM182.7861328125 0.0H204.392578125V-77.34375H182.7861328125ZM193.552734375 -87.0849609375C200.6572265625 -87.0849609375 205.857421875 -91.9921875 205.857421875 -98.583984375C205.857421875 -105.17578125 200.6572265625 -110.0830078125 193.552734375 -110.0830078125C186.4482421875 -110.0830078125 181.248046875 -105.17578125 181.248046875 -98.583984375C181.248046875 -91.9921875 186.4482421875 -87.0849609375 193.552734375 -87.0849609375ZM214.376953125 30.615234375H235.9833984375V-11.572265625H236.203125C240.6708984375 -2.8564453125 248.5078125 1.611328125 258.6884765625 1.611328125C278.9033203125 1.611328125 292.16015625 -14.501953125 292.16015625 -38.7451171875C292.16015625 -62.4755859375 278.6103515625 -78.955078125 258.8349609375 -78.955078125C248.80078125 -78.955078125 240.6708984375 -74.9267578125 235.91015625 -66.8701171875H235.6904296875V-77.34375H214.376953125ZM253.1220703125 -15.966796875C242.208984375 -15.966796875 234.9580078125 -24.90234375 234.9580078125 -38.7451171875C234.9580078125 -52.5146484375 242.208984375 -61.5234375 253.1220703125 -61.5234375C263.595703125 -61.5234375 270.4072265625 -53.2470703125 270.4072265625 -38.7451171875C270.4072265625 -24.2431640625 263.595703125 -15.966796875 253.1220703125 -15.966796875ZM298.775390625 30.615234375H320.3818359375V-11.572265625H320.6015625C325.0693359375 -2.8564453125 332.90625 1.611328125 343.0869140625 1.611328125C363.3017578125 1.611328125 376.55859375 -14.501953125 376.55859375 -38.7451171875C376.55859375 -62.4755859375 363.0087890625 -78.955078125 343.2333984375 -78.955078125C333.19921875 -78.955078125 325.0693359375 -74.9267578125 320.30859375 -66.8701171875H320.0888671875V-77.34375H298.775390625ZM337.5205078125 -15.966796875C326.607421875 -15.966796875 319.3564453125 -24.90234375 319.3564453125 -38.7451171875C319.3564453125 -52.5146484375 326.607421875 -61.5234375 337.5205078125 -61.5234375C347.994140625 -61.5234375 354.8056640625 -53.2470703125 354.8056640625 -38.7451171875C354.8056640625 -24.2431640625 347.994140625 -15.966796875 337.5205078125 -15.966796875ZM418.47656249999994 1.7578125C437.22656249999994 1.7578125 452.16796874999994 -8.935546875 455.02441406249994 -24.31640625H435.32226562499994C433.34472656249994 -18.310546875 427.55859374999994 -14.4287109375 419.13574218749994 -14.4287109375C407.78320312499994 -14.4287109375 401.19140624999994 -21.826171875 400.82519531249994 -33.251953125H455.83007812499994V-39.0380859375C455.83007812499994 -62.6220703125 440.52246093749994 -79.1015625 417.74414062499994 -79.1015625C395.55175781249994 -79.1015625 379.80468749999994 -62.1826171875 379.80468749999994 -38.5986328125C379.80468749999994 -15.087890625 395.03906249999994 1.7578125 418.47656249999994 1.7578125ZM400.97167968749994 -47.021484375C402.14355468749994 -56.689453125 408.51562499999994 -62.6953125 418.18359374999994 -62.6953125C427.92480468749994 -62.6953125 434.37011718749994 -56.689453125 435.46874999999994 -47.021484375ZM492.25488281249994 1.611328125C502.43554687499994 1.611328125 510.71191406249994 -2.8564453125 515.1796875 -11.865234375H515.2529296875V0.0H536.4931640625V-109.130859375H514.9599609375V-66.650390625H514.88671875C509.90624999999994 -75.0 502.14257812499994 -78.955078125 492.10839843749994 -78.955078125C472.33300781249994 -78.955078125 458.78320312499994 -62.4755859375 458.78320312499994 -38.7451171875C458.78320312499994 -14.501953125 472.04003906249994 1.611328125 492.25488281249994 1.611328125ZM497.82128906249994 -15.966796875C487.34765624999994 -15.966796875 480.53613281249994 -24.2431640625 480.53613281249994 -38.7451171875C480.53613281249994 -53.2470703125 487.34765624999994 -61.5234375 497.82128906249994 -61.5234375C508.73437499999994 -61.5234375 515.9853515625 -52.5146484375 515.9853515625 -38.7451171875C515.9853515625 -24.90234375 508.73437499999994 -15.966796875 497.82128906249994 -15.966796875Z" transform="translate(222 167.5654296875)" fill="currentColor"/></symbol>
+    <symbol id="sig" viewBox="0 0 19 12"><rect y="8" width="3.2" height="4" rx="1" fill="currentColor"/><rect x="5.2" y="5.4" width="3.2" height="6.6" rx="1" fill="currentColor"/><rect x="10.4" y="2.8" width="3.2" height="9.2" rx="1" fill="currentColor"/><rect x="15.6" width="3.2" height="12" rx="1" fill="currentColor"/></symbol>
+    <symbol id="wifi" viewBox="0 0 17 12"><path d="M1.4 4.3a10.2 10.2 0 0 1 14.2 0M4.1 7.1a6.4 6.4 0 0 1 8.8 0" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><circle cx="8.5" cy="10.1" r="1.6" fill="currentColor"/></symbol>
+    <symbol id="bat" viewBox="0 0 28 13"><rect x=".6" y=".6" width="23.6" height="11.8" rx="3.7" fill="none" stroke="currentColor" opacity=".4" stroke-width="1.1"/><rect x="2.1" y="2.1" width="20.6" height="8.8" rx="2.4" fill="currentColor"/><path d="M26 4.3v4.4c.9-.3 1.6-1.2 1.6-2.2s-.7-1.9-1.6-2.2z" fill="currentColor" opacity=".45"/></symbol>
+    <symbol id="box" viewBox="0 0 24 24"><path d="m12 2.5 8.5 4.7v9.6L12 21.5l-8.5-4.7V7.2z" fill="currentColor"/><path d="m3.8 7.4 8.2 4.6 8.2-4.6M12 12v9" fill="none" stroke="#F2EEE6" stroke-width="1.3" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" aria-label="Shipped home"><img src="shipped-logo-horizontal.svg" alt="" class="brand-logo on-light" width="142" height="43"><img src="shipped-logo-horizontal-onDark.svg" alt="" class="brand-logo on-dark" width="142" height="43"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#how">How it works</a>
+      <a href="#showcase">In the app</a>
+      <span class="stamp"><i></i>In development</span>
+      <button class="theme-toggle" type="button" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<nav class="trk" id="trk" aria-hidden="true"><span class="rail"></span><span class="ticks"></span><span class="fill"></span><span class="mk"></span></nav>
+
+<main id="main">
+  <div id="top" class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <h1 id="hero-title">Every parcel.<br>One place.<br><em>Less wondering.</em></h1>
+        <p class="lede">Shipped is a native iPhone app that keeps your deliveries in one list and gives each one a clear journey: where it is, what happened, and what’s next.</p>
+        <div class="actions">
+          <a class="btn btn-dark" href="#how">See how it works <span aria-hidden="true">↓</span></a>
+          <a class="btn btn-line" href="#showcase">What’s built so far</a>
+        </div>
+        <dl class="waybill" aria-label="At a glance" style="margin-bottom:0">
+          <div><dt class="label">Platform</dt><dd style="margin:0"><b>iPhone</b></dd></div>
+          <div><dt class="label">Built with</dt><dd style="margin:0"><b>SwiftUI</b></dd></div>
+          <div><dt class="label">Status</dt><dd style="margin:0"><b>In development</b></dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-visual">
+        <span class="tape" aria-hidden="true"></span>
+        <!-- Recreation of the app's Home screen. Sample data, as labelled in the app. -->
+        <div class="phone" role="img" aria-label="Shipped's Home screen on iPhone, showing sample shipments: one USPS parcel out for delivery to Los Angeles, CA and one JNE parcel in transit to Jakarta. The screen is labelled sample records, not live tracking.">
+          <div class="screen"><div class="ui" aria-hidden="true">
+            <span class="island"></span>
+            <div class="statusbar"><span>9:41</span><span class="ic"><svg class="sg"><use href="#sig"/></svg><svg class="wf"><use href="#wifi"/></svg><svg class="bt"><use href="#bat"/></svg></span></div>
+            <div class="s-pad">
+              <div class="s-top">
+                <div class="s-brand glass"><svg style="color:var(--rust)"><use href="#box"/></svg>Shipped</div>
+                <span class="s-spacer"></span>
+                <div class="s-circle glass"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.5 18.5c1.2-2.4 3.2-3.5 5.5-3.5s4.3 1.1 5.5 3.5"/></svg></div>
+                <div class="s-circle dark"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+              </div>
+              <div class="s-h1">Good evening, Alex</div>
+              <div class="s-date">Tuesday 27 October</div>
+              <div class="s-sample">SAMPLE RECORDS · NOT LIVE TRACKING</div>
+              <div class="s-sum"><div><b>1</b>Arriving today</div><div><b>1</b>On the way</div><div class="attn"><b>0</b>Needs attention</div></div>
+              <div class="s-card s-feature" style="margin-top:calc(12*var(--u))">
+                <div class="s-row"><span class="s-pillstack"><span class="s-pill a"><svg><use href="#box"/></svg>In transit</span><span class="s-pill b"><svg><use href="#box"/></svg>Out for delivery</span><span class="s-pill c"><svg><use href="#box"/></svg>Delivered</span></span><span class="s-tag">SAMPLE</span></div>
+                <div class="s-place">Los Angeles, CA</div>
+                <div class="s-meta">USPS · Destination</div>
+                <span class="s-stamp">DELIVERED</span>
+              </div>
+              <div class="s-sec">More shipments<span>1</span></div>
+              <div class="s-card s-list"><div class="s-chip">JNE</div><div><b>JNE</b><small>To Jakarta · Sample</small></div><div class="s-status">In transit</div></div>
+            </div>
+            <div class="tabbar glass"><span class="on"><svg style="color:var(--paper)"><use href="#box"/></svg>Shipments</span><span class="off"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.5l2.5 1.5"/></svg></span><span class="off"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg></span></div>
+          </div></div>
+        </div>
+        <div class="label-tag wb" aria-hidden="true"><div class="wb-in">
+          <div class="wb-top"><svg class="wm" viewBox="0 0 534 143" role="img" aria-label="Shipped"><use href="#wordmark"/></svg><span>SAMPLE DATA</span></div>
+          <div class="wb-grid"><div><i>From</i>Shipped Studio</div><div><i>To</i>You · Los Angeles, CA</div><div><i>Svc</i>Priority</div><div><i>Wt</i>0.4 kg</div></div>
+          <svg viewBox="0 0 320 40" preserveAspectRatio="none"><use href="#barcode"/></svg>
+          <div class="wb-trk">SAMPLE • USPS</div>
+</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <div class="cut" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg></div>
+    <section id="how" class="section" aria-labelledby="how-title">
+      <div class="lbl-bar" aria-hidden="true"><span class="svc">SVC 02</span><span class="route">From: Shipped → To: You</span><svg viewBox="0 0 320 40" preserveAspectRatio="none"><use href="#barcode"/></svg></div>
+      <div class="section-head reveal">
+        <div><h2 id="how-title">Your deliveries, without the detective work.</h2></div>
+        <p>Tracking a package shouldn’t mean digging through messages and switching between carrier sites. Shipped starts with one list and gives every parcel a readable journey.</p>
+      </div>
+
+      <div class="journey-track" id="journey-track"><div class="journey">
+        <div class="journey-phone reveal">
+          <!-- Four real app screens (Add shipment, Confirm shipment, Shipment Detail, Search). On desktop they cross-fade as you scroll; elsewhere only the final Search screen shows. -->
+          <div class="phone" role="img" aria-label="Shipped on iPhone: adding a shipment by entering a tracking number and choosing a courier, confirming it, opening its detail screen with a sample status, estimate and event timeline, and finding it later with Search. Detail and Search use sample data.">
+            <div class="screen">
+              <div class="ui chrome"><span class="island"></span><div class="statusbar"><span>9:41</span><span class="ic"><svg class="sg"><use href="#sig"/></svg><svg class="wf"><use href="#wifi"/></svg><svg class="bt"><use href="#bat"/></svg></span></div></div>
+
+              <div class="ui scr scr-add" aria-hidden="true">
+                <div class="s-pad">
+                  <div class="s-back"><div class="s-circle glass"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></div><span style="width:calc(44*var(--u))"></span></div>
+                  <div class="s-h1" style="margin-top:calc(14*var(--u))">Add shipment</div>
+                  <div class="s-date">Paste a tracking number from any store.</div>
+                  <div class="s-lbl" style="margin-top:calc(22*var(--u))">Tracking number <span>· required</span></div>
+                  <div class="s-input"><span>JNE0012345678</span><em>Paste</em></div>
+                  <div class="s-lbl" style="margin-top:calc(18*var(--u))">Courier <span>· choose manually · required</span></div>
+                  <div class="s-couriers"><div class="s-cour sel"><b>JNE</b><span>JNE Express</span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="m7.5 12.5 3 3 6-6.5" fill="none" stroke="#FBF9F4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="s-cour"><b>SCP</b><span>SiCepat</span></div><div class="s-cour"><b>POS</b><span>Pos Indonesia</span></div><div class="s-cour"><b>USPS</b><span>USPS</span></div><div class="s-cour"><b>UPS</b><span>UPS</span></div><div class="s-cour"><b>FED</b><span>FedEx</span></div></div>
+                  <div class="s-fine">Courier selection is a label only. No carrier connection or live tracking is configured.</div>
+                  <div class="s-lbl" style="margin-top:calc(18*var(--u))">Name <span>· optional</span></div>
+                  <div class="s-input name"><span>Linen shirt</span></div>
+                </div>
+                <div class="s-dock glass"><span>Review <i>→</i></span></div>
+              </div>
+
+              <div class="ui scr scr-confirm" aria-hidden="true">
+                <div class="s-pad">
+                  <div class="s-back"><div class="s-circle glass"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></div><span style="width:calc(44*var(--u))"></span></div>
+                  <div class="s-h1" style="margin-top:calc(18*var(--u));font-size:calc(32*var(--u))">Confirm shipment</div>
+                  <div class="s-date">Review these details before adding it to Shipped.</div>
+                  <div class="s-card s-conf">
+                    <div class="s-localtag"><svg style="color:var(--rust)"><use href="#box"/></svg>LOCAL SHIPMENT</div>
+                    <div class="s-confname">Linen shirt</div>
+                    <div class="s-crow"><small>Courier</small><b>JNE Express</b></div>
+                    <hr>
+                    <small>Tracking number</small>
+                    <code>JNE0012345678</code>
+                  </div>
+                  <div class="s-fine rust">Saved on this device only. Tracking has not started, and no carrier updates are available yet.</div>
+                </div>
+                <div class="s-dock glass"><span>Add shipment <i>→</i></span></div>
+              </div>
+
+              <div class="ui scr scr-detail" aria-hidden="true">
+                <div class="s-pad">
+                <div class="s-back"><div class="s-circle glass"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></div><div class="s-title glass">Linen shirt</div><span style="width:calc(44*var(--u))"></span></div>
+                <div class="s-card s-sum2">
+                  <div class="s-row"><span class="s-m">Studio Arjuna<span class="tag">SAMPLE</span></span><span class="s-status">In transit</span></div>
+                  <div class="s-eta-l">Estimated arrival</div>
+                  <div class="s-eta">Wed, Oct 28 at 5:00 PM</div>
+                  <div class="s-warn">Sample estimate · not from a carrier</div>
+                  <div class="s-route"><div><b>BDO</b><small>Bandung</small></div><span class="bar"></span><div style="text-align:right"><b>JKT</b><small>Jakarta</small></div></div>
+                  <div class="s-trk"><div><small>JNE</small><b>SAMPLE • JNE</b></div><span class="copy">Copy</span></div>
+                </div>
+                <div class="s-map"><svg viewBox="0 0 400 150" preserveAspectRatio="none"><path d="M0 70C70 50 150 80 230 70S350 60 400 75V150H0Z" fill="#EFE7DA"/><path d="M60 118C130 62 210 50 270 58" fill="none" stroke="#B83A15" stroke-width="3" stroke-dasharray="9 7" stroke-linecap="round"/><circle cx="270" cy="58" r="8" fill="#B83A15"/><circle cx="60" cy="118" r="8" fill="#FBF9F4" stroke="#17181A" stroke-width="3"/></svg><span>Illustrative · Sample route</span></div>
+                <div class="s-card s-jr">
+                  <div class="s-row"><h4>Journey</h4><small>Sample events · not carrier scans</small></div>
+                  <div class="ev est"><i></i><div><b>Estimated delivery</b><small>Wed, Oct 28 at 5:00 PM</small></div></div>
+                  <div class="ev"><i></i><div><b>In transit<em>SAMPLE EVENT</em></b><small>Mon, Oct 26 at 9:02 AM</small></div></div>
+                </div>
+              </div>
+              </div>
+
+              <div class="ui scr scr-search" aria-hidden="true">
+                <div class="s-pad">
+                  <div class="s-find"><div class="s-field"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><span>JNE</span></div><em>Cancel</em></div>
+                  <div class="s-scope"><span class="on">All</span><span>Active</span><span>History</span></div>
+                  <div class="s-sec" style="margin-top:calc(20*var(--u))">Active · 1</div>
+                  <div class="s-card s-lib">
+                    <div class="s-mono">JNE</div>
+                    <div><b>Jakarta<em>SAMPLE</em></b><small>JNE · SAMPLE • JNE</small></div>
+                    <div class="s-status">In transit</div>
+                  </div>
+                </div>
+                <div class="tabbar glass"><span class="off"><svg viewBox="0 0 24 24"><path d="m12 2.5 8.5 4.7v9.6L12 21.5l-8.5-4.7V7.2zM3.8 7.4 12 12l8.2-4.6M12 12v9"/></svg></span><span class="off"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.5l2.5 1.5"/></svg></span><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="color:var(--paper)"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>Search</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stops-wrap reveal">
+        <ol class="stops" aria-label="How Shipped works">
+          <li class="stop">
+            <span class="node" aria-hidden="true">01</span>
+            <h3>Add a tracking number.</h3>
+            <p>Paste or type a tracking number, choose the courier, and review it before saving. Shipments are stored on your iPhone.</p>
+            <ul aria-label="Details"><li>Manual courier choice</li><li>Review before saving</li><li>Stored on-device</li></ul>
+          </li>
+          <li class="stop">
+            <span class="node" aria-hidden="true">02</span>
+            <h3>One list. One journey each.</h3>
+            <p>Home shows what’s arriving and what’s on the way. Open a parcel for its status, estimate, route and a timeline of events, laid out so the latest news is first.</p>
+            <ul aria-label="Details"><li>Shipment list</li><li>Status at a glance</li><li>Event timeline</li></ul>
+          </li>
+          <li class="stop">
+            <span class="node" aria-hidden="true">03</span>
+            <h3>Find it later. Take it with you.</h3>
+            <p>Search by tracking number, courier or name, and look back through history. Export your saved shipments as a JSON file whenever you like. There’s no account to create.</p>
+            <ul aria-label="Details"><li>Search</li><li>History</li><li>JSON export</li><li>No account</li></ul>
+          </li>
+        </ol>
+        <span class="rider" aria-hidden="true">01</span>
+        </div>
+      </div></div>
+    </section>
+
+    <section id="showcase" class="section" aria-labelledby="showcase-title">
+      <div class="lbl-bar" aria-hidden="true"><span class="svc">SVC 03</span><span class="route">Out for delivery · In the app</span><svg viewBox="0 0 320 40" preserveAspectRatio="none"><use href="#barcode"/></svg></div>
+      <div class="section-head reveal">
+        <div><h2 id="showcase-title">Your deliveries, in perspective.</h2></div>
+        <p>Three parts of Shipped as it works today, recreated from the app and its built-in sample records.</p>
+      </div>
+
+      <article class="feat reveal">
+        <div class="feat-copy">
+          <h3>One list.</h3>
+          <p>Keep saved shipments organized in one place. Home counts what’s arriving and what’s on the way, then puts the next parcel up front.</p>
+          <ul class="points" aria-label="On the Home screen">
+            <li>Arriving today &amp; on the way<small>Counts</small></li>
+            <li>Featured shipment<small class="sample">Sample data</small></li>
+            <li>More shipments, one row each<small>List</small></li>
+          </ul>
+        </div>
+        <div class="stage">
+          <!-- Home screen again, cropped so it rises out of the panel. -->
+          <div class="phone" role="img" aria-label="Shipped's Home screen, cropped: summary counts, a sample USPS parcel out for delivery to Los Angeles, CA and a sample JNE parcel in transit to Jakarta.">
+            <div class="screen"><div class="ui" aria-hidden="true">
+              <span class="island"></span>
+              <div class="statusbar"><span>9:41</span><span class="ic"><svg class="sg"><use href="#sig"/></svg><svg class="wf"><use href="#wifi"/></svg><svg class="bt"><use href="#bat"/></svg></span></div>
+              <div class="s-pad">
+                <div class="s-top">
+                  <div class="s-brand glass"><svg style="color:var(--rust)"><use href="#box"/></svg>Shipped</div>
+                  <span class="s-spacer"></span>
+                  <div class="s-circle glass"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.5 18.5c1.2-2.4 3.2-3.5 5.5-3.5s4.3 1.1 5.5 3.5"/></svg></div>
+                  <div class="s-circle dark"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+                </div>
+                <div class="s-h1">Good evening, Alex</div>
+                <div class="s-date">Tuesday 27 October</div>
+                <div class="s-sample">SAMPLE RECORDS · NOT LIVE TRACKING</div>
+                <div class="s-sum"><div><b>1</b>Arriving today</div><div><b>1</b>On the way</div><div class="attn"><b>0</b>Needs attention</div></div>
+                <div class="s-card s-feature">
+                  <div class="s-row"><span class="s-pill"><svg style="color:var(--paper)"><use href="#box"/></svg>Out for delivery</span><span class="s-tag">SAMPLE</span></div>
+                  <div class="s-place">Los Angeles, CA</div>
+                  <div class="s-meta">USPS · Destination</div>
+                </div>
+                <div class="s-sec">More shipments<span>1</span></div>
+                <div class="s-card s-list"><div class="s-chip">JNE</div><div><b>JNE</b><small>To Jakarta · Sample</small></div><div class="s-status">In transit</div></div>
+              </div>
+              <div class="tabbar glass"><span class="on"><svg style="color:var(--paper)"><use href="#box"/></svg>Shipments</span><span class="off"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.5l2.5 1.5"/></svg></span><span class="off"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg></span></div>
+            </div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feat flip reveal">
+        <div class="feat-copy">
+          <h3>Every detail.</h3>
+          <p>Open a shipment for its status, estimated delivery, tracking information and an event timeline. Anything that isn’t real carrier data says so.</p>
+          <ul class="points" aria-label="On the detail screen">
+            <li><span class="n">1</span><em>Status &amp; estimated arrival</em><small class="sample">Sample estimate</small></li>
+            <li><span class="n">2</span><em>Tracking string, with Copy</em><small class="sample">Sample string</small></li>
+            <li><span class="n">3</span><em>Route preview</em><small class="sample">Illustrative</small></li>
+            <li><span class="n">4</span><em>Event timeline</em><small class="sample">Sample events</small></li>
+          </ul>
+        </div>
+        <div class="stage tall">
+          <!-- Full Detail screen with numbered pins that match the list. -->
+          <div class="phone" role="img" aria-label="Shipped's detail screen scrolled to the sample JNE tracking string with a Copy button, an illustrative sample route map and a journey timeline with a sample in-transit event. Every item is marked as sample data.">
+            <div class="screen"><div class="ui" aria-hidden="true">
+              <span class="island"></span>
+              <div class="statusbar"><span>9:41</span><span class="ic"><svg class="sg"><use href="#sig"/></svg><svg class="wf"><use href="#wifi"/></svg><svg class="bt"><use href="#bat"/></svg></span></div>
+              <div class="s-pad s-scrolled">
+                <div class="s-back"><div class="s-circle glass"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></div><div class="s-title glass">Linen shirt</div><span style="width:calc(44*var(--u))"></span></div>
+                <div class="s-scroll flat">
+                  <i class="pin" data-k="eta">1</i><i class="pin" data-k="trk">2</i><i class="pin" data-k="map">3</i><i class="pin" data-k="jr">4</i>
+                  <div class="s-card s-sum2">
+                    <div class="s-row"><span class="s-m">Studio Arjuna<span class="tag">SAMPLE</span></span><span class="s-status">In transit</span></div>
+                    <div class="s-eta-l">Estimated arrival</div>
+                    <div class="s-eta">Wed, Oct 28 at 5:00 PM</div>
+                    <div class="s-warn">Sample estimate · not from a carrier</div>
+                    <div class="s-route"><div><b>BDO</b><small>Bandung</small></div><span class="bar"></span><div style="text-align:right"><b>JKT</b><small>Jakarta</small></div></div>
+                    <div class="s-trk"><div><small>JNE</small><b>SAMPLE • JNE</b></div><span class="copy">Copy</span></div>
+                  </div>
+                  <div class="s-map"><svg viewBox="0 0 400 150" preserveAspectRatio="none"><path d="M0 70C70 50 150 80 230 70S350 60 400 75V150H0Z" fill="#EFE7DA"/><path d="M60 118C130 62 210 50 270 58" fill="none" stroke="#B83A15" stroke-width="3" stroke-dasharray="9 7" stroke-linecap="round"/><circle cx="270" cy="58" r="8" fill="#B83A15"/><circle cx="60" cy="118" r="8" fill="#FBF9F4" stroke="#17181A" stroke-width="3"/></svg><span>Illustrative · Sample route</span></div>
+                  <div class="s-card s-jr">
+                    <div class="s-row"><h4>Journey</h4><small>Sample events · not carrier scans</small></div>
+                    <div class="ev est"><i></i><div><b>Estimated delivery</b><small>Wed, Oct 28 at 5:00 PM</small></div></div>
+                    <div class="ev"><i></i><div><b>In transit<em>SAMPLE EVENT</em></b><small>Mon, Oct 26 at 9:02 AM</small></div></div>
+                  </div>
+                </div>
+              </div>
+            </div></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat-copy">
+          <h3>A useful history.</h3>
+          <p>Find saved shipments by name, courier or tracking number, and review delivered items in History.</p>
+          <ul class="points" aria-label="Search and History">
+            <li>Search name, courier or number<small>All · Active · History</small></li>
+            <li>Delivered shipments<small>History tab</small></li>
+            <li>Returned &amp; cancelled<small>Not supported yet</small></li>
+          </ul>
+        </div>
+        <div class="stage">
+          <div class="duo">
+            <!-- History screen. The app's sample records have no delivered parcel, so History shows its real empty state. -->
+            <div class="phone" role="img" aria-label="Shipped's History screen: a search field, Delivered, Returned and Cancelled filters, and the empty state, because the sample records include no delivered shipment.">
+              <div class="screen"><div class="ui" aria-hidden="true">
+                <span class="island"></span>
+                <div class="statusbar"><span>9:41</span><span class="ic"><svg class="sg"><use href="#sig"/></svg><svg class="wf"><use href="#wifi"/></svg><svg class="bt"><use href="#bat"/></svg></span></div>
+                <div class="s-pad">
+                  <div class="s-h1" style="margin-top:calc(8*var(--u))">History</div>
+                  <div class="s-date">Delivered, returned and cancelled</div>
+                  <div class="s-searchbar"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><span>Search all shipments</span><i><svg viewBox="0 0 24 24"><path d="M4 7h16M7 12h10M10 17h4"/></svg></i></div>
+                  <div class="s-seg glass"><span class="on">Delivered</span><span>Returned</span><span>Cancelled</span></div>
+                  <div class="s-card s-empty">
+                    <i><svg viewBox="0 0 24 24"><path d="m12 2.8 8.2 4.5v9.4L12 21.2l-8.2-4.5V7.3zM3.9 7.4 12 12l8.1-4.6M12 12v9"/></svg></i>
+                    <b>Nothing here yet</b>
+                    <p>Delivered shipments will move here when their status is available.</p>
+                    <small>Returned and cancelled statuses are not supported yet.</small>
+                  </div>
+                </div>
+                <div class="tabbar glass"><span class="off"><svg viewBox="0 0 24 24"><path d="m12 2.5 8.5 4.7v9.6L12 21.5l-8.5-4.7V7.2zM3.8 7.4 12 12l8.2-4.6M12 12v9"/></svg></span><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="color:var(--paper)"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.5l2.5 1.5"/></svg>History</span><span class="off"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg></span></div>
+              </div></div>
+            </div>
+            <!-- Search screen with "JNE" typed in. -->
+            <div class="phone" role="img" aria-label="Shipped's Search screen with the query JNE, showing one active sample result: a JNE parcel to Jakarta, in transit, marked sample.">
+              <div class="screen"><div class="ui" aria-hidden="true">
+                <span class="island"></span>
+                <div class="statusbar"><span>9:41</span><span class="ic"><svg class="sg"><use href="#sig"/></svg><svg class="wf"><use href="#wifi"/></svg><svg class="bt"><use href="#bat"/></svg></span></div>
+                <div class="s-pad">
+                  <div class="s-find"><div class="s-field"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><span>JNE</span></div><em>Cancel</em></div>
+                  <div class="s-scope"><span class="on">All</span><span>Active</span><span>History</span></div>
+                  <div class="s-sec" style="margin-top:calc(20*var(--u))">Active · 1</div>
+                  <div class="s-card s-lib">
+                    <div class="s-mono">JNE</div>
+                    <div><b>Jakarta<em>SAMPLE</em></b><small>JNE · SAMPLE • JNE</small></div>
+                    <div class="s-status">In transit</div>
+                  </div>
+                </div>
+                <div class="tabbar glass"><span class="off"><svg viewBox="0 0 24 24"><path d="m12 2.5 8.5 4.7v9.6L12 21.5l-8.5-4.7V7.2zM3.8 7.4 12 12l8.2-4.6M12 12v9"/></svg></span><span class="off"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.5l2.5 1.5"/></svg></span><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="color:var(--paper)"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>Search</span></div>
+              </div></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <p class="showcase-note">Screens are recreated from the real app and show its built-in sample records. They are not live shipments.</p>
+    </section>
+
+    <section id="principles" class="section" aria-labelledby="principles-title">
+      <div class="statement reveal">
+        <div><p class="label">Built with intention</p><h2 id="principles-title">Useful first.<br>Complicated <em class="accent">never.</em></h2></div>
+        <p>Shipped is built around one idea: package tracking should feel organized, clear and dependable. We’d rather ship fewer things that work than promise live data before it’s real.</p>
+        <div class="bars" aria-hidden="true"><svg viewBox="0 0 320 40" preserveAspectRatio="none"><use href="#barcode"/></svg><span>Shipped · In development</span></div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="receipt-wrap wrap">
+  <div class="receipt">
+    <svg class="wm" viewBox="0 0 534 143" role="img" aria-label="Shipped"><use href="#wordmark"/></svg>
+    <p>In development</p>
+    <p>Not yet on the App Store</p>
+    <hr>
+    <p>Sample data only</p>
+    <p>No live tracking yet</p>
+    <svg viewBox="0 0 320 40" preserveAspectRatio="none" aria-hidden="true"><use href="#barcode"/></svg>
+    <p class="thanks">Thank you for tracking</p>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme-toggle');
+  function paint(t){
+    root.setAttribute('data-theme',t);
+    btn.setAttribute('aria-pressed',t==='dark');
+    btn.setAttribute('aria-label',t==='dark'?'Switch to light mode':'Switch to dark mode');
+  }
+  paint(root.getAttribute('data-theme')==='dark'?'dark':'light');
+  btn.addEventListener('click',function(){
+    var t=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    paint(t);
+    try{localStorage.setItem('shipped-theme',t)}catch(e){}
+  });
+})();
+(function(){
+  var wrap=document.querySelector('.stops-wrap'),track=document.getElementById('journey-track');
+  var mq=window.matchMedia('(min-width:981px) and (min-height:760px) and (prefers-reduced-motion:no-preference)');
+  var stops=[].slice.call(document.querySelectorAll('.stop')),rider=wrap.querySelector('.rider'),raf=0;
+  var scr=['add','confirm','detail','search'].map(function(n){return track.querySelector('.scr-'+n)}),at=[0,.3,1,2];
+  function ease(x){return x}
+  function update(){
+    raf=0;
+    if(!mq.matches){wrap.classList.remove('pinned');track.classList.remove('pinned');return}
+    wrap.classList.add('pinned');track.classList.add('pinned');
+    var r=track.getBoundingClientRect(),j=track.firstElementChild.offsetHeight;
+    var t=Math.min(1,Math.max(0,(-(r.top-(77+12)))/(r.height-j)));
+    var s=t*(stops.length-1),i=Math.floor(Math.min(s,stops.length-1.0001)),idx=i+ease(s-i);
+    var ys=stops.map(function(e){return e.offsetTop});
+    var y=ys[i]+(ys[i+1]-ys[i])*(idx-i);
+    rider.style.transform='translateY('+y.toFixed(1)+'px)';
+    var n=Math.round(idx);
+    rider.textContent='0'+(n+1);
+    var seg=0;while(seg<at.length-2&&idx>=at[seg+1])seg++;
+    var f=Math.min(1,Math.max(0,(idx-at[seg])/(at[seg+1]-at[seg]))),g=Math.min(1,Math.max(0,(f-.3)/.4));g=g*g*(3-2*g);
+    scr.forEach(function(e,k){
+      var o=0,x=0;
+      if(k===seg){o=1-g;x=-5*g}else if(k===seg+1){o=g;x=5*(1-g)}
+      e.style.opacity=o.toFixed(3);e.style.transform='translateX('+x.toFixed(2)+'%)';e.style.visibility=o>0?'visible':'hidden';
+    });
+    stops.forEach(function(e,k){e.classList.toggle('active',k===n);e.style.setProperty('--fill',Math.min(1,Math.max(0,idx-k)).toFixed(3))});
+  }
+  function req(){if(!raf)raf=requestAnimationFrame(update)}
+  addEventListener('scroll',req,{passive:true});addEventListener('resize',req);
+  if(mq.addEventListener)mq.addEventListener('change',req);
+  update();
+})();
+(function(){
+  var trk=document.getElementById('trk');
+  if(!trk)return;
+  var mq=matchMedia('(min-width:1360px)'),raf=0;
+  var stops=[['.hero','01','Origin'],['#how','02','In transit'],['#showcase','03','Out for delivery'],['#principles','04','Delivered']].map(function(d){
+    var e=document.createElement('span');e.className='st';e.innerHTML='<i>'+d[1]+'</i> '+d[2];trk.appendChild(e);return {el:e,q:d[0]};
+  });
+  var mk=trk.querySelector('.mk'),fill=trk.querySelector('.fill');
+  function place(){
+    raf=0;if(!mq.matches)return;
+    var h=trk.clientHeight,doc=document.documentElement,max=doc.scrollHeight-innerHeight,p=max>0?Math.min(1,Math.max(0,scrollY/max)):0;
+    mk.style.top=(p*h)+'px';fill.style.height=(p*h)+'px';
+    var cur=0;
+    stops.forEach(function(s,i){
+      var n=document.querySelector(s.q);if(!n)return;
+      var top=n.getBoundingClientRect().top+scrollY,y=Math.min(1,top/Math.max(1,doc.scrollHeight-innerHeight))*h;
+      s.el.style.top=Math.min(y,h-120)+'px';
+      if(scrollY+innerHeight*.4>=top)cur=i;
+    });
+    stops.forEach(function(s,i){s.el.classList.toggle('on',i===cur)});
+  }
+  function req(){if(!raf)raf=requestAnimationFrame(place)}
+  addEventListener('scroll',req,{passive:true});addEventListener('resize',req);place();
+})();
+(function(){
+  var w=document.querySelector('.label-tag.wb');
+  if(w)w.addEventListener('click',function(){if(matchMedia('(hover:none)').matches)w.classList.toggle('on')});
+})();
+(function(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  document.addEventListener('click',function(e){
+    var b=e.target.closest&&e.target.closest('.btn');if(!b)return;
+    var r=b.getBoundingClientRect(),i=document.createElement('span');i.className='ink';
+    i.style.left=(e.clientX-r.left)+'px';i.style.top=(e.clientY-r.top)+'px';
+    b.appendChild(i);setTimeout(function(){i.remove()},750);
+  });
+})();
+(function(){
+  var root=document.documentElement;
+  root.classList.add('js');
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      }
+    });
+  },{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
